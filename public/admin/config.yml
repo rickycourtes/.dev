@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   # name: test-repo
   branch: main # Branch to update (optional; defaults to master)
-media_folder: public/img/uploads
-public_folder: img/uploads
+media_folder: public/static/img
+public_folder: static/uploads
 logo_url: public/img/netliheart.svg
 collections:
   - name: "screens"

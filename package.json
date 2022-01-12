@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "npm run build && next export"
+    "start": "next start",
+    "export": "npm run build && npm run export"
   },
   "dependencies": {
     "netlify-cms-app": "^2.15.63",
-    "next": "^12.0.7",
+    "next": "^12.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
