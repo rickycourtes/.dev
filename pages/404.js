@@ -8,7 +8,7 @@ export default function _404() {
     <div className="container">
       <Head>
         <title>Not Found</title>
-        <link rel="icon" href="/img/favicon.ico" />
+        <link rel="icon" href="static/favicon.ico" />
       </Head>
 
       <main>

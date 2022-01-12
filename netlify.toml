@@ -39,8 +39,8 @@
 
 # Favicon
 [[redirects]]
-    from = "/public/img/touch/*"
-    to = "/public/img/favicon/:splat"
+    from = "/assets/img/touch/*"
+    to = "/assets/img/favicon/:splat"
     status = 301
     force = true
 

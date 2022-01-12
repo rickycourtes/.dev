@@ -1,31 +1,10 @@
 import { Component } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { attributes, react as HomeContent } from '../content/home.md';
-
-// export default function Home() {
-//   return (
-//     <div className="container">
-//       <Head>
-//         <title>Next.js Starter!</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-
-//       <main>
-//         <Header title="Welcome to my app!" />
-//         <Link href="/work">
-//           <a>Work</a>
-//         </Link>
-//         <p className="description">
-//           Get started by editing <code>pages/index.js</code>
-//         </p>
-//       </main>
-//       <Footer />
-//     </div>
-//   )
-// }
 
 export default class Home extends Component {
   render() {
@@ -33,7 +12,17 @@ export default class Home extends Component {
     return (
       <div className="container">
         <Head>
+          <title>{title}</title>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+          {/* Favicon */}
+          <link rel="shortcut icon" href="../static/img/favicon/favicon.ico?v=1" />
+          <link rel="icon" type="image/png" href="../static/img/favicon/favicon-16x16.png?v=1" sizes="16x16" />
+          <link rel="icon" type="image/png" href="../static/img/favicon/favicon-32x32.png?v=1" sizes="32x32" />
+          <link rel="apple-touch-icon" href="../static/img/favicon/apple-touch-icon.png?v=1" sizes="180x180" />
+          <link rel="mask-icon" href="../static/img/favicon/safari-pinned-tab.svg?v=1" color="#1a1a1a" />
+          <link rel="manifest" href="site.webmanifest" />
+          <meta name="theme-color" content="#1a1a1a"></meta>
+          <Script src="../static/js/main.js" defer />
         </Head>
         <main>
           <Header title={title} />

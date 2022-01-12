@@ -8,7 +8,7 @@ export default function Work() {
     <div className="container">
       <Head>
         <title>Work</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="static/favicon.ico" />
       </Head>
 
       <main>
