@@ -3,16 +3,16 @@ import Link from 'next/link'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
-export default function Work() {
+export default function _404() {
   return (
     <div className="container">
       <Head>
-        <title>Work</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Not Found</title>
+        <link rel="icon" href="/img/favicon.ico" />
       </Head>
 
       <main>
-        <Header title="Work" />
+        <Header title="Not Found" />
         <Link href="/">
           <a>Back home</a>
         </Link>

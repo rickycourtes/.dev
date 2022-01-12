@@ -1,6 +1,54 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm run export"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        X-Frame-Options = "DENY"
+        X-XSS-Protection = "1; mode=block"
+        X-Content-Type-Options = "nosniff"
+        Referrer-Policy= "no-referrer-when-downgrade"
+        Permissions-Policy = "interest-cohort=()"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    cache-control = "max-age=0,no-cache,no-store,must-revalidate"
+
+# Netlify subdomain
+[[redirects]]
+    from = "objective-ritchie-aa06f6.netlify.app/*"
+    to = "https://rickycourtes.dev/:splat"
+    status = 301
+    force = true
+
+# COM domain
+[[redirects]]
+    from = "https://rickycourtes.com/*"
+    to = "https://rickycourtes.dev/:splat"
+    status = 301
+    force = true
+
+# Bots
+[[redirects]]
+    from = "/wp-login.php"
+    to = "https://www.google.com/"
+    status = 302
+    force = true
+
+# Favicon
+[[redirects]]
+    from = "/public/img/touch/*"
+    to = "/public/img/favicon/:splat"
+    status = 301
+    force = true
+
+# 404s
+#[[redirects]]
+#    from = "*"
+#    to = "/404"
+#    status = 404
