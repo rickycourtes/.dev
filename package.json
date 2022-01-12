@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && npm run export"
+    "export": "next export"
   },
   "dependencies": {
     "netlify-cms-app": "^2.15.63",
