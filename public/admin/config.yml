@@ -4,7 +4,7 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 media_folder: public/static/img
 public_folder: static/uploads
-logo_url: public/img/netliheart.svg
+logo_url: public/static/netliheart.svg
 collections:
   - name: "screens"
     label: "Screens"
