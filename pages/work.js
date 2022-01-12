@@ -11,7 +11,7 @@ export default function Work() {
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
+        <Header title="Work" />
         <a href="/">
           Back home
         </a>
