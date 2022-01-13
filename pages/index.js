@@ -8,7 +8,7 @@ import { attributes, react as HomeContent } from '../content/home.md';
 
 export default class Home extends Component {
   render() {
-    let { title, projects } = attributes;
+    let { title, theme, projects } = attributes;
     return (
       <div className="container">
         <Head>
@@ -21,16 +21,20 @@ export default class Home extends Component {
           <link rel="apple-touch-icon" href="../static/img/favicon/apple-touch-icon.png?v=1" sizes="180x180" />
           <link rel="mask-icon" href="../static/img/favicon/safari-pinned-tab.svg?v=1" color="#1a1a1a" />
           <link rel="manifest" href="site.webmanifest" />
-          <meta name="theme-color" content="#1a1a1a"></meta>
+          <meta name="theme-color" content={theme == 'dark' ? '#000' : '#fff' }></meta>
           <Script src="../static/js/main.js" defer />
         </Head>
         <main>
           <Header title={title} />
+          <p>Just what you came here for!</p>
           <Link href="/work">
-            <a>Work</a>
+            <a className='btn'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>blueprint</title><g fill="#757575"><path d="M39,30a1,1,0,0,0,1,1h1a6.989,6.989,0,0,1,6,3.408V8a7,7,0,0,0-7.011-7A1,1,0,0,0,39,2Z"></path><path d="M41,33H39.777A2.777,2.777,0,0,1,37,30.223V7H2A1,1,0,0,0,1,8V42a1,1,0,0,0,1,1H41a5,5,0,0,0,0-10Zm-9,3a1,1,0,0,1-1,1H15a1,1,0,0,1-1-1V32a1,1,0,0,1,2,0v3H30V15H21v9a1,1,0,0,1-1,1H15a1,1,0,0,1,0-2h4V15H8V36a1,1,0,0,1-2,0V14a1,1,0,0,1,1-1H31a1,1,0,0,1,1,1Z" fill="#757575"></path></g></svg>
+              My Work
+            </a>
           </Link>
           <HomeContent />
-          <ul>
+          <ul className='list'>
             {projects.map((project, k) => (
               <li key={k}>
                 <h2>{project.name}</h2>
@@ -40,6 +44,14 @@ export default class Home extends Component {
           </ul>
         </main>
         <Footer />
+        <style jsx global>
+          {`
+            body, html {
+              background-color: ${theme == 'dark' ? '#000' : '#fff'};
+              color: ${theme == 'dark' ? '#fff' : '#000'};
+            }
+          `}
+        </style>
       </div>
     )
   }

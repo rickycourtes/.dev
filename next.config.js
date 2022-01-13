@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
     webpack: (cfg) => {
         cfg.module.rules.push(
@@ -8,5 +10,8 @@ module.exports = {
             }
         )
         return cfg;
-    }
+    },
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')],
+    },
 }
