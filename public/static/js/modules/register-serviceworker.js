@@ -10,4 +10,4 @@ if ('serviceWorker' in navigator) {
 }
 
 // Disable PWA install prompt
-window.addEventListener('beforeinstallprompt', (e) => e.preventDefault());
+// window.addEventListener('beforeinstallprompt', (e) => e.preventDefault());

@@ -14,4 +14,9 @@ module.exports = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    pwa: {
+        dest: "public",
+        register: true,
+        skipWaiting: true,
+    },
 }
