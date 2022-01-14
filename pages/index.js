@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
+import Card from '@components/Card'
 import { attributes, react as HomeContent } from '../content/home.md';
 
 export default class Home extends Component {
@@ -26,22 +27,33 @@ export default class Home extends Component {
         </Head>
         <main>
           <Header title={title} />
+          <Link href="/me">
+            <a className='btn avatar' aria-label='About Me'>
+              <img src='https://lh3.googleusercontent.com/ogw/ADea4I5hlMSdZAAGj-GOqc20A_krCTHhURqVb1W1rkiAuQ=s192-c-mo'/>
+            </a>
+          </Link>
           <p>Just what you came here for!</p>
+          <ul className='list'>
+            {projects.map((project, k) => (
+              <Card key={k}>
+                <h2>{project.name}</h2>
+                <p className="description"><code>{project.description}</code></p>
+              </Card>
+            ))}
+          </ul>
+          <Link href="/design">
+            <a className='btn'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>blueprint</title><g fill="#757575"><path d="M39,30a1,1,0,0,0,1,1h1a6.989,6.989,0,0,1,6,3.408V8a7,7,0,0,0-7.011-7A1,1,0,0,0,39,2Z"></path><path d="M41,33H39.777A2.777,2.777,0,0,1,37,30.223V7H2A1,1,0,0,0,1,8V42a1,1,0,0,0,1,1H41a5,5,0,0,0,0-10Zm-9,3a1,1,0,0,1-1,1H15a1,1,0,0,1-1-1V32a1,1,0,0,1,2,0v3H30V15H21v9a1,1,0,0,1-1,1H15a1,1,0,0,1,0-2h4V15H8V36a1,1,0,0,1-2,0V14a1,1,0,0,1,1-1H31a1,1,0,0,1,1,1Z" fill="#757575"></path></g></svg>
+              View UI Shots
+            </a>
+          </Link>
           <Link href="/work">
             <a className='btn'>
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>blueprint</title><g fill="#757575"><path d="M39,30a1,1,0,0,0,1,1h1a6.989,6.989,0,0,1,6,3.408V8a7,7,0,0,0-7.011-7A1,1,0,0,0,39,2Z"></path><path d="M41,33H39.777A2.777,2.777,0,0,1,37,30.223V7H2A1,1,0,0,0,1,8V42a1,1,0,0,0,1,1H41a5,5,0,0,0,0-10Zm-9,3a1,1,0,0,1-1,1H15a1,1,0,0,1-1-1V32a1,1,0,0,1,2,0v3H30V15H21v9a1,1,0,0,1-1,1H15a1,1,0,0,1,0-2h4V15H8V36a1,1,0,0,1-2,0V14a1,1,0,0,1,1-1H31a1,1,0,0,1,1,1Z" fill="#757575"></path></g></svg>
-              My Work
+              View Frontend Pens
             </a>
           </Link>
           <HomeContent />
-          <ul className='list'>
-            {projects.map((project, k) => (
-              <li key={k}>
-                <h2>{project.name}</h2>
-                <p className="description"><code>{project.description}</code></p>
-              </li>
-            ))}
-          </ul>
         </main>
         <Footer />
         <style jsx global>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import { attributes, react as WorkContent } from '../content/work.md';
+import { attributes, react as DesignContent } from '../content/design.md';
 
 export default function Work() {
   let { title, theme, projects } = attributes;
@@ -24,12 +24,13 @@ export default function Work() {
       </Head>
 
       <main>
-        <Header title="My Work" />
+        <Header title={title} />
         <p>Let me know if any of these projects spark your interest!</p>
+        <DesignContent />
         <Link href="/">
           <a className='btn'>
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>home-3</title><g fill="#757575"><path d="M32,7.842,9,26.242V58a3,3,0,0,0,3,3H25V45a1,1,0,0,1,1-1H38a1,1,0,0,1,1,1V61H52a3,3,0,0,0,3-3V26.242ZM37,34a1,1,0,0,1-1,1H28a1,1,0,0,1-1-1V26a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1Z" fill="#757575"></path><path d="M62.625,27.219l-30-24a1,1,0,0,0-1.25,0L17,14.719V8a1,1,0,0,0-1-1H12a1,1,0,0,0-1,1V19.519l-9.625,7.7a1,1,0,0,0,1.25,1.562L32,5.281l29.375,23.5a1,1,0,1,0,1.25-1.562Z"></path></g></svg>
-            Go Back home
+            Go Back Home
           </a>
         </Link>
         <p className="description">
