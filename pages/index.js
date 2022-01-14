@@ -29,7 +29,7 @@ export default class Home extends Component {
           <Header title={title} />
           <Link href="/me">
             <a className='btn avatar' aria-label='About Me'>
-              <img src='https://lh3.googleusercontent.com/ogw/ADea4I5hlMSdZAAGj-GOqc20A_krCTHhURqVb1W1rkiAuQ=s192-c-mo'/>
+              <img src='/static/img/favicon/android-chrome-192x192.png'/>
             </a>
           </Link>
           <p>Check out my latest projects!</p>
