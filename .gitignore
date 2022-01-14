@@ -4,3 +4,6 @@ out/
 .DS_Store
 npm-debug.log
 .netifly
+public/workbox-*.js
+public/sw.js
+public/worker-*.js
